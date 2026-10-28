@@ -1,0 +1,5 @@
+CREATE TABLE tipos_quadra (
+        id BIGINT AUTO_INCREMENT PRIMARY KEY,
+        descricao VARCHAR(100) NOT NULL UNIQUE,
+        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
