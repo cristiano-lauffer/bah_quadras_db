@@ -20,10 +20,8 @@ erDiagram
         BIGINT id PK
         VARCHAR nome
         VARCHAR email
-        VARCHAR telefone
-        VARCHAR senha_hash
-        VARCHAR tipo
-        BOOLEAN ativo
+        VARCHAR senha
+        ENUM papel
         DATETIME created_at
         DATETIME updated_at
     }
