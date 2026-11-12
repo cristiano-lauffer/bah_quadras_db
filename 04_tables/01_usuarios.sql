@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
   email      VARCHAR(150) NOT NULL,
   senha      VARCHAR(255) NOT NULL,  -- hash bcrypt, nunca senha pura
   papel      ENUM('cliente', 'empresa', 'admin') NOT NULL DEFAULT 'cliente',
+  telefone   varchar(100) DEFAULT NULL,
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME NULL,
 
