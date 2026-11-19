@@ -16,8 +16,10 @@ CREATE TABLE IF NOT EXISTS usuarios (
   id         BIGINT NOT NULL AUTO_INCREMENT,
   nome       VARCHAR(100) NOT NULL,
   email      VARCHAR(150) NOT NULL,
+  telefone   VARCHAR(20) NULL,       -- só dígitos (DDD + número), a API remove a máscara
   senha      VARCHAR(255) NOT NULL,  -- hash bcrypt, nunca senha pura
   papel      ENUM('cliente', 'empresa', 'admin') NOT NULL DEFAULT 'cliente',
+  empresa_id BIGINT NULL,            -- só para papel 'empresa'; a FK é criada em 02_empresas.sql
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME NULL,
 

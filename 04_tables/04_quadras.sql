@@ -5,7 +5,12 @@ CREATE TABLE quadras (
         nome VARCHAR(100) NOT NULL,
         descricao VARCHAR(500),
         valor_hora DECIMAL(10, 2) NOT NULL,
-        ativa BOOLEAN NOT NULL DEFAULT TRUE,
+        status ENUM('ativa', 'manutencao', 'inativa') NOT NULL DEFAULT 'ativa',
+        piso VARCHAR(50),
+        cobertura ENUM('coberta', 'descoberta'),
+        capacidade TINYINT UNSIGNED,
+        comodidades JSON,              -- lista de textos, ex.: ["Vestiário", "Iluminação"]
+        imagem_url VARCHAR(500),
         created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
         updated_at DATETIME NULL,
         FOREIGN KEY (empresa_id) REFERENCES empresas (id),
