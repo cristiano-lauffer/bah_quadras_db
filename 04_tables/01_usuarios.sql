@@ -20,6 +20,11 @@ CREATE TABLE IF NOT EXISTS usuarios (
   senha      VARCHAR(255) NOT NULL,  -- hash bcrypt, nunca senha pura
   papel      ENUM('cliente', 'empresa', 'admin') NOT NULL DEFAULT 'cliente',
   empresa_id BIGINT NULL,            -- só para papel 'empresa'; a FK é criada em 02_empresas.sql
+  cidade     VARCHAR(100) NULL,      -- "Porto Alegre/RS" (Meus dados do jogador)
+  esportes   JSON NULL,              -- modalidades favoritas do jogador, ex.: ["Futsal"]
+  preferencias JSON NULL,            -- avisos por e-mail: { lembrete, confirmacao, novidades }
+  notificacoes_lidas JSON NULL,      -- ids dos avisos já lidos no site
+  foto_url   VARCHAR(500) NULL,      -- foto de perfil (enviada pelo POST /uploads da API)
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME NULL,
 

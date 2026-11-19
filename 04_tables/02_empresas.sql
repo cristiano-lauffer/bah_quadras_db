@@ -4,6 +4,8 @@ CREATE TABLE empresas (
         cnpj VARCHAR(20) UNIQUE,       -- só dígitos; a API devolve 409 se repetir
         telefone VARCHAR(20),
         endereco VARCHAR(500),
+        perfil JSON,                   -- vitrine da empresa: descrição, contatos, endereço detalhado, horário de funcionamento,
+                                       -- formas de pagamento, política de cancelamento, logo, capa e fotos
         ativo BOOLEAN NOT NULL DEFAULT TRUE,
         created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
         updated_at DATETIME NULL

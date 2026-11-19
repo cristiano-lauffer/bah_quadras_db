@@ -11,4 +11,9 @@ VALUES
     (5, 'Vôlei de Areia'),
     (6, 'Basquete'),
     (7, 'Tênis'),
-    (8, 'Padel');
+    (8, 'Padel'),
+    (9, 'Badminton'),
+    (10, 'Esportes de Areia'),
+    (11, 'Futebol 7'),
+    (12, 'Futebol 11'),
+    (13, 'Kart');
