@@ -4,4 +4,4 @@ SET NAMES utf8mb4;
 INSERT INTO
     empresas (id, nome, cnpj, telefone, endereco)
 VALUES
-    (1, 'Arena Central', '11222333000181', '51999990000', 'Av. Ipiranga, 6681 - Partenon, Porto Alegre/RS');
+    (1, 'Arena Central', '12345678000195', '51999990000', 'Av. Ipiranga, 6681 - Partenon, Porto Alegre/RS');
