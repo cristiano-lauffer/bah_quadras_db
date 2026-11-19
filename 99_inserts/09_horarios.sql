@@ -1,0 +1,14 @@
+-- Grade de exemplo (slots de 1 hora) para as quadras 1 e 2:
+--   segunda a sexta (1-5): 17h às 22h
+--   sábado e domingo (6, 0): 9h às 21h
+INSERT INTO horarios (quadra_id, dia_semana, hora_inicio, hora_fim)
+SELECT q.id, d.dia, SEC_TO_TIME(h.hora * 3600), SEC_TO_TIME((h.hora + 1) * 3600)
+FROM (SELECT 1 AS id UNION ALL SELECT 2) q
+CROSS JOIN (SELECT 0 AS dia UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3
+            UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6) d
+CROSS JOIN (SELECT 9 AS hora UNION ALL SELECT 10 UNION ALL SELECT 11 UNION ALL SELECT 12
+            UNION ALL SELECT 13 UNION ALL SELECT 14 UNION ALL SELECT 15 UNION ALL SELECT 16
+            UNION ALL SELECT 17 UNION ALL SELECT 18 UNION ALL SELECT 19 UNION ALL SELECT 20
+            UNION ALL SELECT 21) h
+WHERE (d.dia BETWEEN 1 AND 5 AND h.hora BETWEEN 17 AND 21)
+   OR (d.dia IN (0, 6) AND h.hora BETWEEN 9 AND 20);
