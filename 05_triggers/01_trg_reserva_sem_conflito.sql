@@ -1,4 +1,4 @@
-DELIMITER $$;
+DELIMITER $$
 CREATE TRIGGER trg_reserva_sem_conflito
 BEFORE INSERT ON reservas
 FOR EACH ROW

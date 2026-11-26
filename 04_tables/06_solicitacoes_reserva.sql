@@ -1,6 +1,7 @@
 CREATE TABLE solicitacoes_reserva (
         id BIGINT AUTO_INCREMENT PRIMARY KEY,
-        usuario_id BIGINT NOT NULL,
+        usuario_id BIGINT NULL,        -- NULL = reserva de balcão (cliente sem conta)
+        cliente_nome VARCHAR(100),     -- nome mostrado à empresa nas reservas de balcão
         quadra_id BIGINT NOT NULL,
         status_id TINYINT NOT NULL,
         data_reserva DATE NOT NULL,
