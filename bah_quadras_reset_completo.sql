@@ -149,6 +149,10 @@ CREATE TABLE reservas (
         baterias TINYINT UNSIGNED NULL,      -- kart: baterias dentro do horário reservado
         minutos_bateria TINYINT UNSIGNED NULL,
         cancelada_em DATETIME NULL,
+        cancelada_por ENUM('jogador', 'empresa') NULL,
+        reembolso ENUM('pendente', 'feito') NULL,  -- reserva paga e cancelada: a empresa devolve o valor por fora
+        reembolsado_em DATETIME NULL,
+        valor_reembolsado DECIMAL(10, 2) NULL,  -- quanto a empresa devolveu (o resto ela reteve, conforme a política)
         remarcada_em DATETIME NULL,
         data_anterior DATE NULL,             -- dia e hora antes da última remarcação
         hora_anterior TIME NULL,
